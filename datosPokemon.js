@@ -14,9 +14,12 @@ const consultarPokemon = (id,number) => {
 
 //generar un pokemon random
 const btnSeleccionar = () => {
-}
+    let primerPokemon = Math.round(Math.random() * 150);
+    let segundoPokemon = Math.round(Math.random() * 150);
+    consultarPokemon(primerPokemon,1);
+    consultarPokemon(segundoPokemon,2);
+};
 
-//invocar a la funcion
 btnSeleccionar()
 
 //obtnere la referenca del div dsonde se va a pintar los pokemons
