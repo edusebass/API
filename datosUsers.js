@@ -13,6 +13,12 @@ const obtenerUsaurios = async () => {
     }
 };
 
-const pintarUsuarios = (data) => 
-{
+obtenerUsaurios()
+
+const pintarUsuarios = (data) => {
+    let body = ""
+    for (let i = 0; i < data.length; i++) {
+        body += `<li>${data[i].name}</li>`
+    }
+    document.getElementById("data").innerHTML = body;
 }
