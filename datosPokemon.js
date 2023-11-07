@@ -1,5 +1,15 @@
 //consultar la API
 const consultarPokemon = (id,number) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => {
+        console.log(err)
+    })
 }
 
 //generar un pokemon random
