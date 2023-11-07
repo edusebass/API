@@ -16,9 +16,9 @@ const obtenerUsaurios = async () => {
 obtenerUsaurios()
 
 const pintarUsuarios = (data) => {
-    let body = ""
+    let body = "";
     for (let i = 0; i < data.length; i++) {
-        body += `<li>${data[i].name}</li>`
+        body += `<tr><td>${data[i].id}</td><td>${data[i].name}</td><td>${data[i].email}</td></tr>`;
     }
     document.getElementById("data").innerHTML = body;
-}
+};
