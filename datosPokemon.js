@@ -1,16 +1,17 @@
 //consultar la API
-const consultarPokemon = (id,number) => {
+const consultarPokemon = (id, number) => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    .then(response => {
-        return response.json()
-    })
-    .then(data => {
-        console.log(data)
-    })
-    .catch(err => {
-        console.log(err)
-    })
-}
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+        //console.log(data);
+            pintarPokemon(data, number);
+        })
+    .catch(error => {
+        console.log(error);
+    });
+};
 
 //generar un pokemon random
 const btnSeleccionar = () => {
@@ -27,5 +28,7 @@ const lista = document.getElementById("listarpokemon")
 
 //presentar los pokemons
 const pintarPokemon = (data, id) => {
+    let item = lista.querySelector(`#pok-${id}`);
+    item.getElementsByTagName("img")[0].setAttribute("src", data.sprites.front_default);
+    item.getElementsByTagName("p")[0].innerHTML = data.name;
 }
-
